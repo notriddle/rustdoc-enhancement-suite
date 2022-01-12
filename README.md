@@ -1,4 +1,4 @@
-<center><img src=extension/icons/rustdocs.png><h1>Rustdoc Enhancement Suite</h1></center>
+<div align=center><img src=extension/icons/rustdocs.png><h1>Rustdoc Enhancement Suite</h1></div>
 
 RsES syncs settings between Rust documentation pages.
 
