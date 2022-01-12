@@ -3,6 +3,12 @@ Rustdoc Enhancement Suite
 
 RsES syncs settings between Rust documentation pages.
 
+To try it out, run:
+
+    npm install
+    npm build
+    npm start:firefox
+
 License
 ------
 
