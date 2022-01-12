@@ -10,3 +10,10 @@ sast:
   stage: test
 include:
 - template: Security/SAST.gitlab-ci.yml
+
+webext_lint:
+  stage: test
+  script:
+    - npm install
+    - npm run lint
+
