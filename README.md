@@ -1,6 +1,6 @@
-<div align=center><img width=360 height=360 src=extension/icons/rustdocs.png><h1>Rustdoc Enhancement Suite</h1></div>
+<div align=center><img width=360 height=360 src=extension/icons/rustdocs.png><h1>Rustdoc Settings Sync</h1></div>
 
-RsES syncs settings between Rust documentation pages.
+Sync settings between Rust documentation pages.
 
 Available for [Firefox] and [Chrome].
 
@@ -13,12 +13,12 @@ To try it out, run:
     npm run start:firefox
     npm run start:chrome
 
-[issue tracker]: https://gitlab.com/notriddle/rustdoc-enhancement-suite/-/issues
+[issue tracker]: https://gitlab.com/notriddle/rustdoc-settings-sync/-/issues
 
-[Firefox]: https://addons.mozilla.org/en-US/firefox/addon/rustdoc-enhancement-suite/
-[Chrome]: 
+[Firefox]: https://addons.mozilla.org/en-US/firefox/addon/rustdoc-settings-sync/
+[Chrome]: about:blank
 
-[![pipeline status](https://gitlab.com/notriddle/rustdoc-enhancement-suite/badges/main/pipeline.svg)](https://gitlab.com/notriddle/rustdoc-enhancement-suite/-/commits/main) 
+[![pipeline status](https://gitlab.com/notriddle/rustdoc-settings-sync/badges/main/pipeline.svg)](https://gitlab.com/notriddle/rustdoc-settings-sync/-/commits/main) 
 
 License
 ------

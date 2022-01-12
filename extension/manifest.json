@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
-  "name": "Rustdoc Enhancement Suite",
-  "version": "0.1",
+  "name": "Rustdoc Settings Sync",
+  "version": "0.2",
 
   "description": "Sync settings between Rust documentation pages.",
 
