@@ -3,7 +3,7 @@
   "name": "Rustdoc Enhancement Suite",
   "version": "0.1",
 
-  "description": "RsES syncs settings between Rust documentation pages.",
+  "description": "Sync settings between Rust documentation pages.",
 
   "icons": {
     "48": "icons/rustdocs-48.png",

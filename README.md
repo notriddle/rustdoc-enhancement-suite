@@ -2,6 +2,8 @@
 
 RsES syncs settings between Rust documentation pages.
 
+Available for [Firefox] and [Chrome].
+
 If something isn't working, report the issue to our [issue tracker].
 
 To try it out, run:
@@ -12,6 +14,9 @@ To try it out, run:
     npm run start:chrome
 
 [issue tracker]: https://gitlab.com/notriddle/rustdoc-enhancement-suite/-/issues
+
+[Firefox]: https://addons.mozilla.org/en-US/firefox/addon/rustdoc-enhancement-suite/
+[Chrome]: 
 
 [![pipeline status](https://gitlab.com/notriddle/rustdoc-enhancement-suite/badges/main/pipeline.svg)](https://gitlab.com/notriddle/rustdoc-enhancement-suite/-/commits/main) 
 
