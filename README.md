@@ -2,12 +2,16 @@
 
 RsES syncs settings between Rust documentation pages.
 
+If something isn't working, report the issue to our [issue tracker].
+
 To try it out, run:
 
     npm install
     npm run build
     npm run start:firefox
     npm run start:chrome
+
+[issue tracker]: https://gitlab.com/notriddle/rustdoc-enhancement-suite/-/issues
 
 License
 ------
