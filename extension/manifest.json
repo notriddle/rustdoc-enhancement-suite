@@ -23,7 +23,6 @@
 
   "permissions": [
     "storage",
-    "tabs",
     "*://docs.rs/*", "*://doc.rust-lang.org/*", "*://localhost/*", "file:///*"
   ],
 
