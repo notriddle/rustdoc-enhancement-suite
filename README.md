@@ -6,8 +6,8 @@ RsES syncs settings between Rust documentation pages.
 To try it out, run:
 
     npm install
-    npm build
-    npm start:firefox
+    npm run build
+    npm run start:firefox
 
 License
 ------
