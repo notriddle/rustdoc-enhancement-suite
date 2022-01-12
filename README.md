@@ -13,6 +13,8 @@ To try it out, run:
 
 [issue tracker]: https://gitlab.com/notriddle/rustdoc-enhancement-suite/-/issues
 
+[![pipeline status](https://gitlab.com/notriddle/rustdoc-enhancement-suite/badges/main/pipeline.svg)](https://gitlab.com/notriddle/rustdoc-enhancement-suite/-/commits/main) 
+
 License
 ------
 
