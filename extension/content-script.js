@@ -53,7 +53,7 @@
             case "rustdoc-disable-shortcuts":
                 var name = event.data.name.toString();
                 var value = event.data.value.toString();
-                browser.runtime.sendMessage({
+                chrome.runtime.sendMessage({
                     ty: "rses:pushLocalStorage",
                     name: name,
                     value: value,
@@ -65,7 +65,7 @@
     });
 
     // Respond to changes in other tabs
-    browser.runtime.onMessage.addListener(function(message) {
+    chrome.runtime.onMessage.addListener(function(message) {
         if (!message || !message.ty) return;
         switch (message.ty) {
             case "rses:pushLocalStorage":
@@ -103,7 +103,7 @@
         "rustdoc-disable-shortcuts",
         "rustdoc-line-numbers",
     ];
-    browser.storage.sync.get().then(storeSettings => {
+    chrome.storage.sync.get(storeSettings => {
       for (let name of list) {
         if (storeSettings && storeSettings.hasOwnProperty(name)) {
             window.postMessage({

@@ -10,7 +10,7 @@ function updateStoreSettings() {
       storeSettings[select.id] = select.value;
     }
 
-    browser.storage.sync.set(storeSettings);
+    chrome.storage.sync.set(storeSettings);
     window.postMessage({
         ty: "rses:pullAllLocalStorage",
         all: storeSettings,
@@ -19,7 +19,7 @@ function updateStoreSettings() {
 
 // Pull current settings
 function updateUI() {
-    browser.storage.sync.get().then(storeSettings => {
+    chrome.storage.sync.get(storeSettings => {
         const checkboxSettings = document.querySelectorAll(".rustdoc-settings input[type='checkbox']");
         for (let checkbox of checkboxSettings) {
             checkbox.addEventListener("change", () => requestAnimationFrame(() => updateStoreSettings()));
@@ -42,7 +42,7 @@ function updateUI() {
 updateUI();
 
 // Respond to changes in other tabs
-browser.runtime.onMessage.addListener(function(message) {
+chrome.runtime.onMessage.addListener(function(message) {
     if (!message || !message.ty) return;
     switch (message.ty) {
         case "rses:pushLocalStorage":

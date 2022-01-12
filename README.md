@@ -8,6 +8,7 @@ To try it out, run:
     npm install
     npm run build
     npm run start:firefox
+    npm run start:chrome
 
 License
 ------
