@@ -1,0 +1,42 @@
+{
+  "manifest_version": 2,
+  "name": "Rustdoc Enhancement Suite",
+  "version": "0.1",
+
+  "description": "RsES syncs settings between Rust documentation pages.",
+
+  "icons": {
+    "48": "icons/rust-48.png",
+    "96": "icons/rust-96.png"
+  },
+
+  "background": {
+    "page": "background/background.html"
+  },
+
+  "content_scripts": [
+    {
+      "matches": ["*://docs.rs/*", "*://doc.rust-lang.org/*", "*://localhost/*", "file:///*"],
+      "js": ["content-script.js"]
+    }
+  ],
+
+  "permissions": [
+    "storage",
+    "tabs",
+    "*://docs.rs/*", "*://doc.rust-lang.org/*", "*://localhost/*", "file:///*"
+  ],
+
+  "options_ui": {
+    "page": "options/options.html",
+    "browser_style": true,
+    "chrome_style": true,
+    "open_in_tab": false
+  },
+
+  "applications": {
+    "gecko": {
+      "id": "rses@notriddle.com"
+    }
+  }
+}

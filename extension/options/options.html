@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" type="text/css" href="options.css"/>
+</head>
+
+<body>
+  <section class="rustdoc-settings">
+    <h1 class="browser-style">Options</h1>
+    <div class="browser-style">
+      <label>Use system theme <input id="rustdoc-use-system-theme" type="checkbox" checked></label>
+    </div>
+    <div class="browser-style">
+      <label>Preferred dark theme
+        <select id="rustdoc-preferred-dark-theme">
+          <option value=dark selected>dark</option>
+          <option value=light>light</option>
+          <option value=ayu>ayu</option>
+        </select>
+      </label>
+    </div>
+    <div class="browser-style">
+      <label>Preferred light theme
+        <select id="rustdoc-preferred-light-theme">
+          <option value=dark>dark</option>
+          <option value=light selected>light</option>
+          <option value=ayu>ayu</option>
+        </select>
+      </label>
+    </div>
+    <hr>
+    <div class="browser-style">
+      <label>Auto-hide item contents for large items <input id="rustdoc-auto-hide-large-items" type="checkbox" checked></label>
+    </div>
+    <div class="browser-style">
+      <label>Auto-hide item methods’ documentation <input id="rustdoc-auto-hide-method-docs" type="checkbox"></label>
+    </div>
+    <div class="browser-style">
+      <label>Auto-hide trait implementation documentation <input id="rustdoc-auto-hide-trait-implementations" type="checkbox"></label>
+    </div>
+    <div class="browser-style">
+      <label>Directly go to item in search if there is only one result <input id="rustdoc-go-to-only-result" type="checkbox"></label>
+    </div>
+    <div class="browser-style">
+      <label>Show line numbers on code examples <input id="rustdoc-line-numbers" type="checkbox"></label>
+    </div>
+    <div class="browser-style">
+      <label>Disable keyboard shortcuts <input id="rustdoc-disable-shortcuts" type="checkbox"></label>
+    </div>
+  </section>
+  <script src="options.js"></script>
+</body>
+
+</html>
