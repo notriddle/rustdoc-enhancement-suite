@@ -2,7 +2,7 @@
 
 Sync settings between Rust documentation pages.
 
-Available for [Firefox] and [Chrome].
+Available for [Firefox], [Chrome], and [Edge].
 
 If something isn't working, report the issue to our [issue tracker].
 
@@ -17,6 +17,7 @@ To try it out, run:
 
 [Firefox]: https://addons.mozilla.org/en-US/firefox/addon/rustdoc-settings-sync/
 [Chrome]: about:blank
+[Edge]: https://microsoftedge.microsoft.com/addons/detail/rustdoc-settings-sync/hkgcnanboeeppamlahljjbhilelbnehf
 
 [![pipeline status](https://gitlab.com/notriddle/rustdoc-settings-sync/badges/main/pipeline.svg)](https://gitlab.com/notriddle/rustdoc-settings-sync/-/commits/main) 
 
