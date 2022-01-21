@@ -16,7 +16,7 @@ To try it out, run:
 [issue tracker]: https://gitlab.com/notriddle/rustdoc-settings-sync/-/issues
 
 [Firefox]: https://addons.mozilla.org/en-US/firefox/addon/rustdoc-settings-sync/
-[Chrome]: about:blank
+[Chrome]: https://chrome.google.com/webstore/detail/rustdoc-settings-sync/bjlannnpljhejnbhnjghmamhidbcbhgm
 [Edge]: https://microsoftedge.microsoft.com/addons/detail/rustdoc-settings-sync/hkgcnanboeeppamlahljjbhilelbnehf
 
 [![pipeline status](https://gitlab.com/notriddle/rustdoc-settings-sync/badges/main/pipeline.svg)](https://gitlab.com/notriddle/rustdoc-settings-sync/-/commits/main) 
