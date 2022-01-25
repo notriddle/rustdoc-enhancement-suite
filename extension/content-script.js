@@ -20,13 +20,18 @@
     "  if (event.data.ty == 'rses:pullLocalStorage') {" +
     "    window.localStorage.setItem(event.data.name, event.data.value);" +
     "    if (event.data.name == 'rustdoc-theme') {" +
-    "      switchTheme(window.currentTheme, window.mainTheme, event.data.value, true);" +
+    "      window.switchTheme(window.currentTheme, window.mainTheme, event.data.value, true);" +
     "    } else if (event.data.name == 'rustdoc-preferred-dark-theme' || event.data.name == 'rustdoc-preferred-light-theme' || event.data.name == 'rustdoc-use-system-theme') {" +
-    "      window.updateSystemTheme();" +
+    "      if (getSettingValue('use-system-theme') !== 'false') {" +
+    "        window.updateSystemTheme();" +
+    "      } else {" +
+    "        window.switchToSavedTheme();" +
+    "      }" +
     "    }" +
     "  } else if (event.data.ty == 'rses:subscribe') {" +
     "    window.updateLocalStorage = function(name, value) {" +
     "      try {" +
+    "        if (window.localStorage.getItem(name) === value) return;" +
     "        window.postMessage({ty: 'rses:pushLocalStorage', name: name, value: value});" +
     "        window.localStorage.setItem(name, value);" +
     "      } catch(e) {}" +
@@ -92,10 +97,10 @@
 
     // Inject current settings
     var list = [
+        "rustdoc-use-system-theme",
         "rustdoc-theme",
         "rustdoc-preferred-dark-theme",
         "rustdoc-preferred-light-theme",
-        "rustdoc-use-system-theme",
         "rustdoc-auto-hide-large-items",
         "rustdoc-auto-hide-method-docs",
         "rustdoc-auto-hide-trait-implementations",
