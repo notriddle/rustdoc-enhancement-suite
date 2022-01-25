@@ -11,26 +11,26 @@
     // we filter the variables on the other side to only ones we know
     // about. Think very carefully before adding more logic here.
     //
-    // Also, this is copied from
+    // Also, some of this is copied from
     // https://github.com/rust-lang/rust/blob/72e74d7b9cf1a7901650227e74650f1fcc797600/src/librustdoc/html/static/js/storage.js
+    // https://github.com/rust-lang/rust/blob/72e74d7b9cf1a7901650227e74650f1fcc797600/src/librustdoc/html/static/js/settings.js
     var sc = document.createElement("script");
-    sc.innerHTML = "window.updateLocalStorage = function(name, value) {" +
-    "  try {" +
-    "    window.postMessage({ty: 'rses:pushLocalStorage', name: name, value: value});" +
-    "    window.localStorage.setItem(name, value);" +
-    "  } catch(e) {}" +
-    "};" +
-    // https://github.com/rust-lang/rust/blob/72e74d7b9cf1a7901650227e74650f1fcc797600/src/librustdoc/html/static/js/settings.js#L5
-    "window.addEventListener('message', function(event) {" +
-    "  if (event.source == window &&" +
-    "      event.data &&" +
-    "      event.data.ty == 'rses:pullLocalStorage') {" +
+    sc.innerHTML = "window.addEventListener('message', function(event) {" +
+    "  if (event.source != window || !event.data) return;" +
+    "  if (event.data.ty == 'rses:pullLocalStorage') {" +
     "    window.localStorage.setItem(event.data.name, event.data.value);" +
     "    if (event.data.name == 'rustdoc-theme') {" +
     "      switchTheme(window.currentTheme, window.mainTheme, event.data.value, true);" +
     "    } else if (event.data.name == 'rustdoc-preferred-dark-theme' || event.data.name == 'rustdoc-preferred-light-theme' || event.data.name == 'rustdoc-use-system-theme') {" +
     "      window.updateSystemTheme();" +
     "    }" +
+    "  } else if (event.data.ty == 'rses:subscribe') {" +
+    "    window.updateLocalStorage = function(name, value) {" +
+    "      try {" +
+    "        window.postMessage({ty: 'rses:pushLocalStorage', name: name, value: value});" +
+    "        window.localStorage.setItem(name, value);" +
+    "      } catch(e) {}" +
+    "    };" +
     "  }" +
     "});";
     document.documentElement.appendChild(sc);
@@ -104,14 +104,21 @@
         "rustdoc-line-numbers",
     ];
     chrome.storage.sync.get(storeSettings => {
-      for (let name of list) {
-        if (storeSettings && storeSettings.hasOwnProperty(name)) {
-            window.postMessage({
-                ty: "rses:pullLocalStorage",
-                name: name,
-                value: storeSettings[name],
-            })
+        for (let name of list) {
+            if (storeSettings && storeSettings.hasOwnProperty(name)) {
+                window.postMessage({
+                    ty: "rses:pullLocalStorage",
+                    name: name,
+                    value: storeSettings[name],
+                });
+            }
         }
-      }
+        // We need to avoid subscribing to event until AFTER injecting
+        // all the current preferences. This is because rustdoc will
+        // write to its localstorage at startup, and we need to ignore
+        // this, otherwise we get a race condition.
+        window.postMessage({
+            ty: "rses:subscribe",
+        });
     });
 })();
