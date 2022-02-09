@@ -31,6 +31,7 @@
     "  } else if (event.data.ty == 'rses:subscribe') {" +
     "    window.updateLocalStorage = function(name, value) {" +
     "      try {" +
+    "        var name = name.indexOf('rustdoc-') === 0 ? name : ('rustdoc-' + name);" +
     "        if (window.localStorage.getItem(name) === value) return;" +
     "        window.postMessage({ty: 'rses:pushLocalStorage', name: name, value: value});" +
     "        window.localStorage.setItem(name, value);" +
