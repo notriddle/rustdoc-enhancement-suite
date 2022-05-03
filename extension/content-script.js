@@ -23,7 +23,7 @@
     "      window.switchTheme(window.currentTheme, window.mainTheme, event.data.value, true);" +
     "    } else if (event.data.name == 'rustdoc-preferred-dark-theme' || event.data.name == 'rustdoc-preferred-light-theme' || event.data.name == 'rustdoc-use-system-theme') {" +
     "      if (getSettingValue('use-system-theme') !== 'false') {" +
-    "        window.updateSystemTheme();" +
+    "        updateSystemTheme();" +
     "      } else {" +
     "        window.switchToSavedTheme();" +
     "      }" +
